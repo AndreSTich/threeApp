@@ -4,7 +4,11 @@ module ApplicationHelper
     if page_title.empty?
       base_title
     else
-      page_title + " | " + base_title
+      if page_title.length <= 40
+        page_title + " | " + base_title
+      else
+        page_title[0..4] + "..." + page_title[-3..-1] + " | " + base_title
+      end
     end
   end
 end
