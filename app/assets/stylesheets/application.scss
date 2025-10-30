@@ -1,5 +1,7 @@
 @import "bootstrap";
 
+$gray-medium-light: #eaeaea;
+
 body {
   padding-top: 60px;
 }
@@ -69,7 +71,7 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid $gray-medium-light;
   color: #777;
 }
 
