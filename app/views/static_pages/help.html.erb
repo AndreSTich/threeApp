@@ -1,6 +1,13 @@
-<% provide(:title, "Help") %>
-<h1>Help</h1>
-<p>
+<% provide(:title, "Help green") %>
+
+<% 
+  title_parts = yield(:title).split(' ')
+  page_title = title_parts[0]
+  text_color = title_parts[1] || 'black'
+%>
+
+<h1 class="text-<%= text_color %>">Help</h1>
+<p class="text-<%= text_color %>">
   Get help on the Ruby on Rails Tutorial at the
   <a href="http://www.railstutorial.org/#help">Rails Tutorial help section</a>.
   To get help on this sample app, see the
