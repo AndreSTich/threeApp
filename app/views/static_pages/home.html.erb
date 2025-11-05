@@ -17,6 +17,20 @@
   </h2>
 
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+
+  <div>
+    <% if @users && @users.exists? %>
+      <h3>Пользователи:</h3>
+      <div>
+        <% @users.each do |user| %>
+          <div class="card-body">
+            <h5><%= user.name %></h5>
+            <p><%= user.email %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <%= link_to image_tag("rails.png", alt: "Rails logo", class: "image"),
