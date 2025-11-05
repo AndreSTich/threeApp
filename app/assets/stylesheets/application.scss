@@ -170,3 +170,27 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+
+.row{
+  flex-direction: column;
+  align-items: center;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  display: inline;
+  .form-control {
+    border-color: #dc3545;
+    color: #dc3545;
+  }
+  label {
+    color: #dc3545;
+  }
+}
