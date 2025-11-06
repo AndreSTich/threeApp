@@ -1,5 +1,4 @@
 module SessionsHelper
-
   # Осуществляет вход данного пользователя.
   def log_in(user)
     session[:user_id] = user.id
@@ -25,20 +24,24 @@ module SessionsHelper
     end
   end
 
+  def authenticated?(remember_token)
+    BCrypt::Password.new(remember_token).is_password?(remember_token)
+  end
+
   # Возвращает true, если пользователь вошел, иначе false.
   def logged_in?
     !current_user.nil?
   end
 
-    # Забывает постоянную сессии.
+  # Забывает постоянную сессии.
   def forget(user)
     user.forget
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
   end
 
-  # Осуществляет выход текущего пользователя.
-  def log_out
+   # Осуществляет выход текущего пользователя.
+   def log_out
     forget(current_user)
     session.delete(:user_id)
     @current_user = nil
